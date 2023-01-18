@@ -1,6 +1,7 @@
 package javawithjerry;
 
 import java.text.NumberFormat;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,7 +18,6 @@ public class Main {
         System.out.println(minMe);
         double randMe = Math.random() * 100;
         System.out.println(Math.round(randMe));
-
         // FORMATTING NUMBERS
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         NumberFormat taxes = NumberFormat.getPercentInstance();
@@ -25,5 +25,10 @@ public class Main {
         String taxResult = taxes.format(.25);
         String income = "This year made " + currResult + " dollars and paid "  + taxResult + " in taxes";
         System.out.println(income);
+        // READING INPUT
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Full Name: ");
+        String fullName = scanner.nextLine().trim();
+        System.out.println("Hello " + fullName + "! How are you today?");
     }
 }
